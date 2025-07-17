@@ -1,0 +1,3 @@
+Отправляем заказ с телом: {'firstName': 'Nadezhda', 'lastName': 'Planidina', 'address': 'Vosstaniiya 17', 'metroStation': 3, 'phone': '+79165558825', 'rentTime': 3, 'deliveryDate': '2024-11-03', 'comment': 'Call me before deliver', 'color': ['BLACK']}
+Ответ сервера: 201, тело: {"track":884004}
+Ответ отмены заказа: 400, тело: {"code":400,"message":"Недостаточно данных для поиска"}
