@@ -12,7 +12,6 @@ class TestCreationOrder:
     @pytest.mark.parametrize('color', DataForOrder.scooter_color)
     @allure.title("Create order with color: {color}")
     def test_create_order_with_color_variations(self, color):
-
         with allure.step("Prepare order data"):
             order_data = DataForOrder.order_data.copy()
             order_data['color'] = color
@@ -29,11 +28,10 @@ class TestCreationOrder:
             assert response.status_code == 201, \
                 f"Expected status 201, got {response.status_code}. Response: {response.text}"
 
-        response_json = response.json()
-
         with allure.step("Verify response contains track"):
+            response_json = response.json()
             assert Flags.SUCCESSFUL_ORDER_CREATION in response_json, \
-                f"Response JSON does not contain 'track': {response_json}"
+                f"Response JSON does not contain '{Flags.SUCCESSFUL_ORDER_CREATION}': {response_json}"
 
             track = response_json[Flags.SUCCESSFUL_ORDER_CREATION]
             assert track, "Track is empty or None"
