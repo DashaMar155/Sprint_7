@@ -1,0 +1,3 @@
+Order creation response: {'track': 393269}
+Cancel response status: 400
+Cancel response body: {'code': 400, 'message': 'Недостаточно данных для поиска'}
